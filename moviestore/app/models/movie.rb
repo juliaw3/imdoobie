@@ -1,4 +1,6 @@
 class Movie < ActiveRecord::Base
+  has_many :purchases
+  has_many :buyers, through: :purchases
   def poster
     "http://ia.media-imdb.com/images/M/#{poster_url}"
   end
@@ -14,4 +16,6 @@ class Movie < ActiveRecord::Base
       "Add to"
     end
   end
+  has_many :purchases
+  has_many :buyers, through: :purchases
 end
