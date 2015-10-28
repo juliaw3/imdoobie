@@ -1,50 +1,38 @@
-<div class="row">
-  <nav class="top-bar column" data-topbar>
+ <nav class="navbar pull-right" role ="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+          <h1><i class="fi-play-video"></i>MovieStore</h1> 
+             
 
-    <ul class="title-area">
-      <li class="name">
-        <h1>
-          <a href="/">
-            <i class="fi-play-video"></i> MovieStore
-          </a>
-        </h1>
-      </li>
-      <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
-    </ul>
-
-    <section class="top-bar-section">
-
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <%if signed_in?%>
-          <li>
-            <%= link_to cart_path do%>
-              <i class="fi-shopping-cart"></i> My Cart (<span class="cart-count"><%=current_user.cart_count%></span>)
-            <%end%>
-          </li>
-          <li><%=link_to current_user.email, edit_user_registration_path%></li>
-          <li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
-        <%else%>
-          <li><%=link_to "Register", new_user_registration_path%></li>
-          <li><%=link_to "Login", new_user_session_path%></li>
-        <%end%>
-      </ul>
-
-      <!-- Left Nav Section -->
-      <ul class="left">
-        <li class="has-form">
-          <div class="row collapse">
-            <div class="large-8 small-9 columns">
-              <input type="text" class="radius-ls expand" placeholder="Find Movie">
-            </div>
-            <div class="large-4 small-3 columns">
+            <ul class="has-form">
+              <div class="row collapse">
+                <div class="large-8 small-9 columns">
+                 <input type="text" class="radius-ls expand" placeholder="Find Movie">
+               </div>
+             <div class="large-4 small-3 columns">
               <a href="#" class=" radius-rs button">Search</a>
             </div>
           </div>
-        </li>
+        </ul>
+      </a>
+      </div>
+
+    </div>
+</nav>
+
+        <%if signed_in?%>
+          <ul>
+            <%= link_to cart_path do%>
+              <p align="right"><i class="fi-shopping-cart"></i> My Cart (<span class="cart-count"><%=current_user.cart_count%></span>)</p>
+            <%end%>
+          </ul>
+          <p align="right">Logged in as <%=link_to current_user.email, edit_user_registration_path%></p>
+          <p align="right"><%=link_to "Logout", destroy_user_session_path, method: :delete%></p>
+        <%else%>
+          <p align="right"><%=link_to "Register", new_user_registration_path%></p>
+          <p align="right"><%=link_to "Login", new_user_session_path%></p>
+        <%end%>
       </ul>
-
-    </section>
-
-  </nav>
-</div>
+      </p>
+ </div>
