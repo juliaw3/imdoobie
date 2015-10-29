@@ -1,6 +1,16 @@
-<h4 class="column">Featured Movies</h4>
+<h3 align="left">Featured Movies</h3>
 <div class="column">
-  <ul class="movies-grid no-bullet row">
+<ul class="has-form">
+              <div class="row collapse">
+                <div class="large-8 small-9 columns">
+                 <input type="text" class="radius-ls expand" placeholder="Find Movie">
+               </div>
+             <div class="large-4 small-3 columns">
+            <a href="#" class=" radius-rs button">Search</a>
+            </div>
+          </div>
+        </ul>
+  <ul align="left">
     <% @movies.each do |movie| %>
       <li class="large-3 medium-4 small-12 column">
         <div class="movie-card padly">
@@ -8,12 +18,12 @@
             <%= image_tag movie.poster %>
           <% end %>
           <div class="movie-info ell glassy-bg padmy padlx">
-            <div class="title">
+            <div align="left">
               <h6><%= movie.title %> <span>(<%= movie.release_year %>)</span></h6>
             </div>
-            <p class="left price label movie-label radius">$ <%= movie.price %></p>
+            <p align="left">$ <%= movie.price %></p>
             <%= link_to movie.imdb, class: "right" do %>
-              <%= image_tag("imdb_logo.png") %>
+              <p align="left"><%= image_tag("imdb_logo.png") %></p>
             <% end %>
           </div>
         </div>
